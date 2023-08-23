@@ -50,8 +50,8 @@ RUN pecl install protobuf
 RUN docker-php-ext-enable grpc && \
     docker-php-ext-enable protobuf
 
-RUN pecl install xdebug \
-    && docker-php-ext-enable xdebug
+RUN pecl install xdebug-3.1.5 \
+      && docker-php-ext-enable xdebug
 
 COPY install_mecab_php-mecab-docker.sh .
 RUN chmod +x install_mecab_php-mecab-docker.sh && ./install_mecab_php-mecab-docker.sh
